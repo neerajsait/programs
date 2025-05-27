@@ -1,0 +1,7 @@
+public class Main {
+    public static void main(String[] args) {
+        int m = 13;
+        String[] result = {"Even", "Odd"};
+        System.out.println(result[m % 2]);
+    }
+}
