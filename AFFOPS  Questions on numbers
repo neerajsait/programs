@@ -1,0 +1,157 @@
+#include <stdio.h>
+
+// Function prototypes
+void fibonacci(int n);
+int isArmstrong(int num);
+int isOdd(int num);
+int isPrime(int num);
+long long factorial(int num);
+int isStrong(int num);
+
+int main() {
+    int choice, num;
+
+    printf("Select an option:\n");
+    printf("1. Fibonacci series (up to n terms)\n");
+    printf("2. Check Armstrong number\n");
+    printf("3. Check Odd or Even\n");
+    printf("4. Check Prime or Non-prime\n");
+    printf("5. Factorial\n");
+    printf("6. Check Strong number\n");
+    printf("Enter your choice: ");
+    scanf("%d", &choice);
+
+    printf("Enter a number: ");
+    scanf("%d", &num);
+
+    switch (choice) {
+        case 1:
+            if (num <= 0) {
+                printf("Enter a positive integer for Fibonacci terms.\n");
+                break;
+            }
+            fibonacci(num);
+            break;
+        case 2:
+            if (isArmstrong(num))
+                printf("%d is an Armstrong number.\n", num);
+            else
+                printf("%d is NOT an Armstrong number.\n", num);
+            break;
+        case 3:
+            if (isOdd(num))
+                printf("%d is Odd.\n", num);
+            else
+                printf("%d is Even.\n", num);
+            break;
+        case 4:
+            if (isPrime(num))
+                printf("%d is Prime.\n", num);
+            else
+                printf("%d is NOT Prime.\n", num);
+            break;
+        case 5:
+            if (num < 0) {
+                printf("Factorial not defined for negative numbers.\n");
+                break;
+            }
+            printf("Factorial of %d is %lld\n", num, factorial(num));
+            break;
+        case 6:
+            if (isStrong(num))
+                printf("%d is a Strong number.\n", num);
+            else
+                printf("%d is NOT a Strong number.\n", num);
+            break;
+        default:
+            printf("Invalid choice.\n");
+    }
+
+    return 0;
+}
+
+// Fibonacci series function
+void fibonacci(int n) {
+    long long a = 0, b = 1, next;
+    printf("Fibonacci series (%d terms): ", n);
+    for (int i = 1; i <= n; i++) {
+        if(i == 1) {
+            printf("%lld ", a);
+            continue;
+        }
+        if(i == 2) {
+            printf("%lld ", b);
+            continue;
+        }
+        next = a + b;
+        printf("%lld ", next);
+        a = b;
+        b = next;
+    }
+    printf("\n");
+}
+
+// Armstrong check function
+int isArmstrong(int num) {
+    int original = num, sum = 0, digit, count = 0;
+    int temp = num;
+
+    // Count digits
+    while (temp != 0) {
+        count++;
+        temp /= 10;
+    }
+
+    temp = num;
+    while (temp != 0) {
+        digit = temp % 10;
+        int power = 1;
+        for(int i = 0; i < count; i++) power *= digit;
+        sum += power;
+        temp /= 10;
+    }
+    return (sum == original);
+}
+
+// Odd or even check
+int isOdd(int num) {
+    return (num % 2 != 0);
+}
+
+// Prime check
+int isPrime(int num) {
+    if (num <= 1) return 0;
+    for (int i = 2; i * i <= num; i++) {
+        if (num % i == 0) return 0;
+    }
+    return 1;
+}
+
+// Factorial function
+long long factorial(int num) {
+    long long fact = 1;
+    for (int i = 2; i <= num; i++) {
+        fact *= i;
+    }
+    return fact;
+}
+
+// Strong number check
+int isStrong(int num) {
+    int original = num, sum = 0, digit;
+
+    while (num != 0) {
+        digit = num % 10;
+
+        // Calculate factorial of digit
+        int fact = 1;
+        for (int i = 1; i <= digit; i++) {
+            fact *= i;
+        }
+
+        sum += fact;
+        num /= 10;
+    }
+
+    return (sum == original);
+}
