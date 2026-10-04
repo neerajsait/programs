@@ -1,26 +1,36 @@
 # programs
 
-> A small collection of standalone programming exercises.
+> Collection of programming exercises and algorithm implementations
 
-## Overview
+Built with the web and focused on algorithms, data-structures, learning, programming.
 
-The repository contains short console-oriented exercises covering number operations, conversions, alphabet output, and swapping values. Files are stored without conventional source extensions, so inspect a file before choosing how to run it.
+## About this project
 
-## What’s in this repo
-
-- Number and arithmetic exercises
-- Time conversion and digit manipulation
-- Swap examples and simple character/pattern output
-
-## Stack
-
-Standalone exercise files; the repository does not declare a single language or build system.
+This repository is part of **Neeraj Sai's** growing collection of software projects, experiments, and learning builds. It reflects a practical, curious approach to creating useful products and understanding how they work under the hood.
 
 ## Getting started
 
-1. Clone the repository and inspect the source file you want to try.
-2. Use the compiler or interpreter appropriate to that file; there is no shared install or test command.
+Clone the repository and follow the setup instructions for the project's framework or language:
 
-## Notes
+```bash
+git clone https://github.com/neerajsait/programs.git
+cd programs
+```
 
-These are learning examples rather than a packaged application. File names and contents are the source of truth for each exercise.
+Check the project files for the available run commands and configuration requirements.
+
+## Links
+
+[Repository](https://github.com/neerajsait/programs)
+
+## Author
+
+**Tiruveedhi Neeraj Venkata Sai**
+
+- GitHub: [@neerajsait](https://github.com/neerajsait)
+- Portfolio: [neeraj's portfolio](https://github.com/neerajsait/portfoliomain)
+
+
+## Existing project documentation
+
+# programs
